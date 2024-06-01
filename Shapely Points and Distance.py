@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 ## Copyright (c) 2024, Mohammad Jaweed Nazary
@@ -20,10 +20,8 @@
 
 
 
-def get_points(line_geometry, las_file):
-    start_time = time.time()
-    
-    # line_geometry: a line geometry created within the las file extent using Shapely Line String method
+def get_points_shapely_method(line, las_file):   
+    # line: a line geometry created within the las file extent using Shapely Line String method
     # las_file: an string of the name of las file to use. This file should be in the same directory as this code. 
     
     from shapely.geometry import Point
@@ -45,11 +43,7 @@ def get_points(line_geometry, las_file):
     shapely_points = [Point(x,y,z) for x,y,z in zip(x,y,z)]
 
     # Using Within Distance method in Shapely to get the points along the line 
-    extracted_points = [point for point in shapely_points if point.dwithin(cross_section_line, 3.0)]
+    extracted_points = [point for point in shapely_points if point.dwithin(line, 3.0)]
 
-    end_time = time.time()
-    elapsed_time = end_time-start_time
-
-    print("Number of points generated =  %s" %len(extracted_points))
-    print(" Elapsed time = %.3f sec" %elapsed_time)
+    return(extracted_points)
 
