@@ -4,7 +4,7 @@
 # In[1]:
 
 
-## Copyright (c) 2024, Mohammad Jaweed Nazary
+## Copyright (c) 2024, M Jaweed Nazary
 ## All tights reserved 
 ## University of Missouri-Columbia
 ## Department of Civil and Environmental Engineering
