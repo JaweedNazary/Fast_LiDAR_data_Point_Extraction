@@ -1,4 +1,4 @@
-# Fast_LiDAR_data_Point_Extraction
+# Fast LiDAR data Point Extraction
 For your reference, we created and compared the following five methods for extracting LiDAR elevation data along a straight line:
 
 1. **Shapely Points and Distance**: In this method, we created Shapely points and used a distance-based approach to identify points within a specified distance from the line. This involved checking if each point lies within the desired range using the `within_distance` method of Shapely.
